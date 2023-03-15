@@ -1,6 +1,7 @@
 const Product = require('../models/ProductSchema');
 
 let discount = 2;
+let tax = 5;
 let shippingCharge = 100;
 
 const asyncHandler = require('express-async-handler');
@@ -23,7 +24,13 @@ const addProduct = asyncHandler(async function (req, res) {
         return file.filename;
     });
 
-    req.body.price = ( req.body.price - ((discount/100) * req.body.price)) + shippingCharge
+    let prodDescount =  req.body.price - ((discount/100) * req.body.price);
+    let prodTax = (tax/100) * req.body.price;
+    console.log(prodDescount, prodTax);
+
+    req.body.price =  shippingCharge + prodTax + prodDescount
+    
+    console.log(req.body.price);
 
     req.body.image = filenames;
 

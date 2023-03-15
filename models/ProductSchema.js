@@ -4,17 +4,31 @@ var productSchema = new mongoose.Schema({
     poductname: {
         type:String,
         required:true,
-        unique:true,
         index:true,
     },
+
     description: {
         type: String,
+        required:true,
     },
+
     price: {
+        type: Number,
+        required:true,
+    },
+
+    descount: {
+        type: Number,
+        default: "0"
+    },
+
+    shippingCharge: {
         type: Number
     },
+
     image: {
-        type: Array
+        type: Array,
+        required:true,
     }
 })
 
