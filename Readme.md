@@ -1,7 +1,14 @@
 
 ## Product API
 
-The product api end-points
+### Features
+
+- User can create a product
+- Edit the product
+- Delete the product
+- View all product
+
+### The product api end-points
 
 #### View all Product
 ```bash
@@ -25,3 +32,17 @@ You want to pass Product id as the params
 ``` 
 You want to pass Product id as the params
  
+
+
+## Run Server
+
+To run the server, run the following command
+
+```bash
+  npm install
+```
+
+```bash
+  npm start
+```
+
