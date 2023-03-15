@@ -7,7 +7,6 @@ var logger = require('morgan');
 const { notFound, errorHandler } = require('./middleware/errorHandler');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 
 connectDB()
 var app = express();

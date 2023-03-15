@@ -44,11 +44,11 @@ const addProduct = asyncHandler(async function (req, res) {
 
 const editProduct = asyncHandler( async function (req, res) {
     const id = req.params.id
-    const file = req.files
+    const file = req.files.length;
 
     validateMongodb(id);
 
-    if (file[0]) {
+    if (file) {
         console.log("I am hear");
         let filenames = req.files.map(function (file) {
             return file.filename;
